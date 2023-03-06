@@ -37,6 +37,7 @@ export default function Addanimal() {
     data.append("picture", e.target.picture.files[0]);
     data.append("date_of_birth", e.target.date_of_birth.value);
     data.append("status", e.target.status.value);
+    data.append("description",e.target.description.value);
     fetch("/animals", {
       method: "POST",
       body: data,
@@ -79,6 +80,14 @@ export default function Addanimal() {
         className="form-control mt-1"
         placeholder="Status"
         type="number" name="status"
+        />
+      </div>
+      <div className="form-group mt-3">
+        <label>Description</label>
+        <input
+        className="form-control mt-1"
+        placeholder="Description"
+        type="textarea" name="description"
         />
       </div>
       <div className="d-grid gap-2 mt-3">

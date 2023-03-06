@@ -9,8 +9,8 @@ import Carousel from 'react-bootstrap/Carousel';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import  axios from "axios";
-import Addanimal from './Addanimal';
-import DetailPage from './DetailPage';
+import {useNavigate} from 'react-router-dom';
+// import history from './history';
 const alldata=[];
 const animal={}
 export default class FrontPage extends Component {
@@ -20,7 +20,8 @@ export default class FrontPage extends Component {
         this.state={
             logout:false,
             animals:[],
-            addA:0
+            addA:0,
+            detail:false
         }
     }
     logout()
@@ -56,12 +57,13 @@ export default class FrontPage extends Component {
         animal["date_of_birth"]=res.data.date_of_birth
         animal["status"]=res.data.status
         animal["image"]=res.data.image
+        animal["description"]=res.data.description
         console.log(animal)
+        this.props.navigation.navigate('/detail')
         
       })
-      .catch((error) => console.log(error));
-      <DetailPage animal={animal}  />
-      this.props.history.push("/detail")
+      .catch((error) => console.log(error))
+      
       }
     
   render() {
@@ -146,16 +148,16 @@ export default class FrontPage extends Component {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-    <div style={{marginLeft:'10%,position:absolute,top:0%'}}>
+    <div style={{marginLeft:'10%',position:'absolute',top:'90%'}}>
    {alldata.map((data)=>
      <>
   <Card onClick={()=>this.detail(data.id)} className='position-relative top-0' style={{ width: '18rem',display:'inline-block',marginLeft:'1%',marginTop:'1%',padding:0,alignContent:'center',boxShadow: '1px 2px 9px #888888'}}>
     <Card.Img variant="top" src={data.image} />
+   
     <Card.Body>
       <Card.Title>Card Title</Card.Title>
       <Card.Text>
-        Some quick example text to build on the card title and make up the
-        bulk of the card` content.
+        {data.description}
       </Card.Text>
       <Button variant="primary">Go somewhere</Button>
     </Card.Body>
