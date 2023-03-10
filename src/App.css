@@ -89,7 +89,7 @@ label {
 }
 @media only screen and (max-width: 430px) {
   #addanimal{
-    position:absolute;
+    position:relative;
     top:25%;
     left:0%;
     width: 50%;

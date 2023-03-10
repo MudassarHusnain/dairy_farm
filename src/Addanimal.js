@@ -56,7 +56,7 @@ export default function Addanimal() {
       });
   }
   return (
-    <div className="bg-dark">
+    <div className="">
     <NavbarA />
     <div id="addanimal">
       <form className="Auth-form" onSubmit={(e)=>callapi(e)}>
