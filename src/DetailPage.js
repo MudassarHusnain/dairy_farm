@@ -25,18 +25,25 @@ export default function DetailPage() {
      </div>
      <div className='row position-relative'>
        <div className='col-6'>
-         <table id='animalDetail' style={{border:'1px solid black'}}>
+         <table id='animalDetail' style={{}}>
          <tr>
-          <td style={{border:'1px solid black',fontWeight:'bold'}}>Height</td>
-          <td style={{border:'1px solid black',paddingLeft:'20px'}} id='spaceBw'>6.5</td>
-          <td style={{border:'1px solid black',paddingLeft:'20px',fontWeight:'bold'}}>Weight</td>
-          <td style={{border:'1px solid black',paddingLeft:'20px'}}>4000pound</td>
+          <td style={{fontWeight:'bold'}}>Height(Ft)</td>
+          <td style={{paddingLeft:'10px',display:''}} id='spaceBw'>6.5</td>
+          <td style={{paddingLeft:'10px',fontWeight:'bold'}}>Weight(KG)</td>
+          <td style={{paddingLeft:'10px',display:''}}>4000</td>
+         </tr>
+         <tr>
+           <td style={{fontWeight:'bold'}}>Breed</td>
+           <td style={{width:'200px',display:''}}><span>Sahiwal</span></td>
+           <td style={{paddingLeft:'10px',fontWeight:'bold'}}>Color</td>
+           <td style={{width:'200px',display:''}}><span>Brown</span></td>
+
          </tr>
          </table>
        </div>
        <div className='col-6'>
-       <FaWhatsappSquare icon="fa-brands fa-fa-whatsapp"style={{fontSize:'50px'}} /><span style={{marginLeft:'10%'}}>03070781256</span><br/>
-       <FaPhoneAlt style={{fontSize:'40px',marginTop:'10px'}}/> <span style={{marginLeft:'12%'}}>03070781256</span> 
+       <FaWhatsappSquare icon="fa-brands fa-fa-whatsapp"style={{fontSize:'50px',marginLeft:'10%'}} /><span style={{marginLeft:'10%'}}>03070781256</span><br/>
+       <FaPhoneAlt style={{fontSize:'40px',marginTop:'10px',marginLeft:'10%'}}/> <span style={{marginLeft:'12%'}}>03070781256</span> 
        </div>
      </div>
     </div>

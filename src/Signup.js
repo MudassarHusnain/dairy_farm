@@ -10,7 +10,8 @@ class Signup extends Component {
       email: '',
       password: '',
       password_confirmation: '',
-      errors: ''
+      errors: '',
+      signUp:[]
      };
   }
 handleChange = (event) => {
@@ -43,25 +44,32 @@ handleSubmit = (event) => {
 render() {
     const {username, email, password, password_confirmation} = this.state
 return (
-      <div>
+  <div className='bg-grey'>
+      <div className="Auth-form-container">
+      <div className='position-absolute top-50 start-50 translate-middle h-25 w-45'>
       
-        <h1>Sign Up</h1>        
-<form onSubmit={this.handleSubmit}>
-          <input
+        <h1 className="Auth-form-title">Sign Up</h1>        
+<form className="Auth-form" onSubmit={this.handleSubmit}>
+<div className="form-group mt-3">
+          <input className="form-control mt-1"
             placeholder="username"
             type="text"
             name="username"
             value={username}
             onChange={this.handleChange}
           />
-          <input
+          </div>
+          <div className="form-group mt-3">
+          <input className="form-control mt-1"
             placeholder="email"
             type="text"
             name="email"
             value={email}
             onChange={this.handleChange}
           />
-          <input 
+          </div>
+          <div className="form-group mt-3">
+          <input  className="form-control mt-1"
             placeholder="password"
             type="password"
             name="password"
@@ -69,20 +77,24 @@ return (
             onChange={this.handleChange}
           />          
           <input
+          className="form-control mt-1"
             placeholder="password confirmation"
             type="password"
             name="password_confirmation"
             value={password_confirmation}
             onChange={this.handleChange}
           />
-        
-          <button placeholder="submit" type="submit">
+        </div>
+        <div className="d-grid gap-2 mt-3">
+          <button placeholder="submit" type="submit" className="btn btn-primary">
             Sign Up
           </button>
-       
+       </div>
         </form>
         <div>
         or <Link to='/login'>login</Link>
+      </div>
+      </div>
       </div>
       </div>
     );

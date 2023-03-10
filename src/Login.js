@@ -74,14 +74,14 @@ handleSubmit = (event) => {
         });
   }
 render() {
-    const {username, email, password} = this.state
+    const {username,password} = this.state
     return (
       <div className='bg-grey'>
       <div className="Auth-form-container">
       {console.log(secureLocalStorage.getItem("login"))}
         {secureLocalStorage.getItem('login')?
           <Navigate replace to="/frontPage" />
-        : <div className='position-absolute top-50 start-50 translate-middle h-25 w-25' >
+        : <div className='position-relative  translate-middle h-25 w-25' >
 
          <form className="Auth-form" onSubmit={this.handleSubmit}>
         <div className="Auth-form-content">
@@ -114,7 +114,7 @@ render() {
             </button>
           </div>
           <p className="forgot-password text-right mt-2">
-            Forgot <a href="#">password?</a>
+            Forgot <a href="/signup">Signup</a>
           </p>
         </div>
       </form>
