@@ -1,6 +1,8 @@
 import React, { useState} from "react";
 import { Navigate } from "react-router";
 import  secureLocalStorage  from  "react-secure-storage";
+import NavbarA from "./NavbarA";
+import './App.css'
 export default function Addanimal() {
   const [image, setImage] = useState("")
   const [date_of_birth, setDate_of_birth] = useState("")
@@ -54,8 +56,9 @@ export default function Addanimal() {
       });
   }
   return (
-    
-    <div className="position-absolute top-50 start-50 translate-middle h-25 w-25">
+    <div className="bg-dark">
+    <NavbarA />
+    <div id="addanimal">
       <form className="Auth-form" onSubmit={(e)=>callapi(e)}>
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Add New Animal Details</h3>
@@ -89,9 +92,9 @@ export default function Addanimal() {
         placeholder="Description"
         type="textarea" name="description"
         />
-      </div>
+      </div><br/>
       <div className="d-grid gap-2 mt-3">
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-light">
               Add New Animal
             </button>
           </div>
@@ -103,6 +106,7 @@ export default function Addanimal() {
           <Navigate replace to='/frontPage' /></>
           :console.log("this is not working properly")
          }
+    </div>
     </div>
   );
 }

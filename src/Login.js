@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 import FrontPage from './FrontPage';
 import  secureLocalStorage  from  "react-secure-storage";
 import { Navigate } from "react-router-dom";
+import './Login.css'
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -75,6 +76,7 @@ handleSubmit = (event) => {
 render() {
     const {username, email, password} = this.state
     return (
+      <div className='bg-grey'>
       <div className="Auth-form-container">
       {console.log(secureLocalStorage.getItem("login"))}
         {secureLocalStorage.getItem('login')?
@@ -117,6 +119,7 @@ render() {
         </div>
       </form>
          </div>}
+      </div>
       </div>
     );
   }
