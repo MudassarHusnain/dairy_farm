@@ -63,7 +63,7 @@ export default function Addanimal() {
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Add New Animal Details</h3>
           <div className="form-group mt-3">
-            <label>Picture</label>
+            <label>Animal Picture</label>
             <input
             className="form-control mt-1"
             placeholder="username"
