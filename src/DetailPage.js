@@ -42,8 +42,9 @@ export default function DetailPage() {
          </table>
        </div>
        <div className='col-6'>
-       <FaWhatsappSquare icon="fa-brands fa-fa-whatsapp"style={{fontSize:'50px',marginLeft:'10%'}} /><span style={{marginLeft:'10%'}}>03070781256</span><br/>
-       <FaPhoneAlt style={{fontSize:'40px',marginTop:'10px',marginLeft:'10%'}}/> <span style={{marginLeft:'12%'}}>03070781256</span> 
+       <a href='https://web.whatsapp.com/send?phone=${03070781256}'>
+       <FaWhatsappSquare icon="fa-brands fa-fa-whatsapp"style={{fontSize:'50px',marginLeft:'10%'}} /><br/>
+       </a>
        </div>
      </div>
     </div>
